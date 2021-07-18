@@ -1,0 +1,29 @@
+import pygame
+
+pygame.init()
+
+# Display Settings
+DISPLAY_W = 700
+DISPLAY_H = 700
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GREY = (54,69,79)
+BLUE_GREY = (44, 62, 80)
+AMBER = (240, 180, 0)
+GREEN = (39, 174, 96)
+GREEN2 = (39, 174, 150)
+BLUE = (100, 149, 237)
+PURPLE = (140, 70, 170)
+ORANGE = (220, 65, 10)
+TURQUOISE = (0,210,205)
+AQUA = (0, 206, 209)
+YELLOW = (246, 180, 0)
+
+# BOARD SETTINGS
+ROWS = 41
+
+# MAZE STATE
+ON = True
+OFF = False

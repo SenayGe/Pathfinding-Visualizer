@@ -51,7 +51,7 @@ class MainMenu(Menu):
             self.app.draw_text('START VISUALIZER', 40, self.start_button_color, self.start_button_x, self.start_button_y)
             self.app.draw_text('ALGORITHM', 40, self.algorithm_button_color, self.algorithm_button_x, self.algorithm_button_y)
             self.app.draw_text('TUTORIAL', 40, self.tutorial_button_color,  self.tutorial_button_x, self.tutorial_button_y)
-            self.app.draw_text('BY SENAY.G', 27, WHITE, self.app.display_w - 95, self.app.display_h - 15)
+            self.app.draw_text('BY SENAY.G', 22, WHITE, self.app.display_w - 95, self.app.display_h - 15)
 
 
             self.blit_screen()
@@ -128,7 +128,7 @@ class AlgorithmMenu(Menu):
                                self.astar_button_y)
             self.app.draw_text("DIJKSTRA'S ALGORITHM", 30, self.dijkstra_button_color, self.dijkstra_button_x,
                                self.dijkstra_button_y)
-            self.app.draw_text('BY SENAY.G', 27, WHITE, self.app.display_w - 95, self.app.display_h - 15)
+            self.app.draw_text('BY SENAY.G', 22, WHITE, self.app.display_w - 95, self.app.display_h - 15)
             self.blit_screen()
 
     def move_cursor(self):
@@ -182,10 +182,10 @@ class TutorialMenu(Menu):
             self.app.draw_text('USE THE RIGHT MOUSE CLICK TO RESET ANY NODE DRAWN ON THE GRID.', 22, WHITE, self.mid_w, self.mid_h + 210)
             self.app.draw_text("PRESS 'C' ON YOUR KEYBOARD TO CLEAR THE WHOLE GRID.", 22, WHITE, self.mid_w, self.mid_h + 240)
             self.app.draw_text("PRESS 'ESC' OR 'BACKSPACE' KEY TO RETURN TO THE MAIN MENU.", 22, WHITE, self.mid_w, self.mid_h + 270)
-            self.app.draw_text('BY SENAY.G', 27, WHITE, self.app.display_w - 95, self.app.display_h - 15)
+            self.app.draw_text('BY SENAY.G', 22, WHITE, self.app.display_w - 95, self.app.display_h - 15)
             self.blit_screen()
 
     def check_selection(self):
-        if self.app.ESC_KEY or self.app.BACK_KEY:
+        if self.app.ESC_KEY or self.app.BACK_KEY or self.app.ENTER_KEY:
             self.app.menu_screen = self.app.main_menu
             self.run_display = False

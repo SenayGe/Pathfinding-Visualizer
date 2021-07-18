@@ -2,6 +2,7 @@ import pygame
 from queue import PriorityQueue
 
 
+# Heuristics (Manhattan distance)
 def h_cost(p1, p2):
     x1, y1 = p1
     x2, y2 = p2
@@ -94,6 +95,7 @@ class Algorithm:
                         open_nodes.put((total_cost[neighbor], count, neighbor))
                         open_nodes_hash.add(neighbor)
                         neighbor.make_open()
+                        end.make_end()
 
             self.board.draw()
 

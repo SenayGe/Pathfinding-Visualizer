@@ -2,6 +2,9 @@ import random
 import time
 from itertools import zip_longest
 
+import pygame
+
+
 class Maze:
     def __init__(self, board):
         self.board = board
@@ -26,6 +29,9 @@ class Maze:
         are placed on odd numbered rows. For that reason the
         total number of rows in the board must be odd numbered.
         """
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
 
         # Choose a spot to divide the board horizontally
         start_row_range = bottom + 2
@@ -45,10 +51,13 @@ class Maze:
         #         self.board.grid[row][x].make_barrier()  # HORIZONTAL WALL
         #     self.board.draw()
         for column in range(left + 1, right):
-            if not self.board.grid[y][column].is_start() and not self.board.grid[y][column].is_end():
-            self.board.grid[y][column].make_barrier()  # VERTICAL WAL
+            current_node = self.board.grid[y][column]
+            if not current_node.is_start() and not current_node.is_end():
+                current_node.make_barrier()  # VERTICAL WAL
         for row in range(bottom + 1, top):
-            self.board.grid[row][x].make_barrier()  # HORIZONTAL WALL
+            current_node = self.board.grid[row][x]
+            if not current_node.is_start() and not current_node.is_end():
+                self.board.grid[row][x].make_barrier()  # HORIZONTAL WALL
         self.board.draw()
 
         # Randomly place passage-way/opening on three of the four walls
@@ -80,7 +89,6 @@ class Maze:
 
         if bottom + 3 < y and x > left + 3:
             self.maze_recursive_call(y, bottom, left, x)
-
 
     def make_maze(self):
         """" creates a maze using recursive division"""
